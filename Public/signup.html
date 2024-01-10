@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/styles.css">
+    <title>Sign Up</title>
+</head>
+<body>
+
+<nav>
+    <a href="/public/index.html">Home</a>
+    <a href="/public/login.html">Login</a>
+    <a href="/Public/signup.html">Sign Up</a>
+    <a href="/public/contact.html">Contact Us</a>
+</nav>
+
+<div class="content">
+    <h1>Sign Up</h1>
+    <form action="/signup" method="post" id="signupForm" onsubmit="return validateForm() ">
+        <!-- First Name -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+
+        <!-- Last Name -->
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var dob = document.getElementById('dob').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        
+        if (firstName === '' || lastName === '' || dob === '' || email === '' || password === '') {
+            alert('All fields must be filled out');
+            return false;
+        }
+
+
+        return true;
+    }
+</script>
+
+</body>
+</html>
